@@ -7,8 +7,8 @@ DCR C              ; Decrement count since one element is already considered
 
 LOOP: INX H        ; HL = HL + 1 → point to next number
 CMP M              ; Compare A - M
-JNC SKIP           ; If A ≤ M → skip update (A is already smaller or equal)
-MOV A, M           ; Else A > M → update A with new minimum value
+JNC SKIP           ; If A> M → skip update (A is already greater or equal)
+MOV A, M           ; Else A <M → update A with new maximum value
 
 SKIP: DCR C        ; Decrease counter
 JNZ LOOP           ; If count ≠ 0, repeat loop

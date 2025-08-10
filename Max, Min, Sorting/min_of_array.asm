@@ -7,7 +7,7 @@ DCR C            ; Count reduced by 1
 
 LOOP: INX H      ; HL points to next element
 CMP M            ; Compare A with M (A - M)
-JNC SKIP         ; If A ≤ M, skip
+JC SKIP         ; If A ≤ M, skip
 MOV A, M         ; Else A > M → update A to new minimum
 
 SKIP: DCR C      ; Decrease count
